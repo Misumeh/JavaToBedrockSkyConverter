@@ -1,6 +1,6 @@
 body {
     background-color: #fff;
-    background-image: url('Assets/bg.png');
+    background-image: url('Assets/bg.webp');
     background-repeat: no-repeat; 
     background-attachment: fixed;
     background-size: 100% 38rem; /* needs fixing just bcs idk how to do it properly */
