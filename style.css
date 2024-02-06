@@ -1,0 +1,137 @@
+body {
+    background-color: #fff;
+    background-image: url('Assets/bg.png');
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    background-size: 100% 38rem; /* needs fixing just bcs idk how to do it properly */
+    color: #000;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+img {
+    display: block;
+    margin: auto;
+    padding-bottom: 1rem;
+    width: 70%;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2); 
+}
+
+.btn {
+    padding: 12px;
+    background-color: #007382;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-size: 16px; /* Fixes button size inconsistency*/
+}
+
+.btn:hover {
+    background-color: #5ac3cd;
+}
+
+#file {
+    display: none;
+}
+
+.error {
+    padding: 16px;
+    margin: 16px;
+    background-color: #ffc0cbc6;
+    border: 2px solid #ff696191;
+    margin-bottom: 3rem;
+    font-weight: bolder;
+    font-size: 1.2em;
+    color: #333;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Sombra suave */
+}
+
+.container {
+    margin-bottom: 16px;
+}
+
+.textin {
+    padding: 12px;
+    background-color: #ffffff;
+    color: #076c7a;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 2px solid #007782; 
+    transition: 0.3s ease;
+}
+
+.textin:focus,
+.textin:active {
+    color: #000; 
+    background-color: #fff;
+    border: 2px solid #77dbff; 
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 16px; 
+    padding: 16px; 
+    background-color: rgba(255, 255, 255, 0.718); 
+    border-radius: 10px; 
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.419);
+}
+
+.note-box {
+    position: absolute;
+    display: inline-flex;
+    transform: translate(-13%, -120%);
+    width: 256px;
+    transition: .2s;
+}
+
+.note-box i {
+    color: #ff4500;
+    margin-right: 8px;
+}
+
+.note-box label {
+    background-color: #ffe5b4;
+    padding: 8px;
+    border: 1px solid #ffd900;
+    border-radius: 4px;
+}
+
+.invis {
+    transition: .1s;
+    display: none;
+}
+
+.input-container-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tri{
+    padding: 4px;
+}

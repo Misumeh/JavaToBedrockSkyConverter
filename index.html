@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Java -> Bedrock Skies</title>
+</head>
+<body>
+    <main>
+
+        <img src="Assets/logo.png" alt="Java To Bedrock Sky Converter logo">
+
+     <div class="error">
+          <i class="fas fa-exclamation-triangle"></i> THIS DOES NOT CONVERT *ANYTHING* BESIDES THE SKY    <i class="fas fa-exclamation-triangle"></i>
+     </div>
+     <div class="input-container-container">
+        <div class="input-container">
+            <div class="file_input tri">
+                <label for="file" class="btn">
+                    <i class="fas fa-cloud-upload-alt"></i> Upload Zip
+                </label>
+                <input type="file" id="file" accept=".zip">
+            </div>
+
+            <div class="tri">
+                <div class="note-box" id="note-box">
+                    <label for="skyname"><i class="fas fa-exclamation-triangle"></i>Skybox Original File Name <b>(INCLUDE.PNG)</b></label>
+                </div>
+                <input type="text" class="textin" value="starfield.png" id="skyname">
+            </div>
+            <div class="tri">
+                <button class="btn" onclick="convert()">
+                    <i class="fas fa-file-export"></i> Convert
+                </button>
+            </div>
+        </div>
+     </div>
+    </main>
+    <script src="jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
