@@ -1,43 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mellow converts Minecraft Java Edition sky textures into Bedrock Edition cubemaps in your browser. Fast, secure, and server-free.">
+    <meta name="keywords" content="Minecraft, skybox converter, Java to Bedrock, sky textures, cubemap, resource pack, PNG skybox, web tool">
+    <meta name="theme-color" content="#1f1108">
+    <link rel="canonical" href="https://mellow.misumeh.com/">
+    <link rel="icon" href="Assets/m-favicon.png" type="image/png">
+    <meta property="og:title" content="Mellow | Minecraft Java to Bedrock Sky Converter">
+    <meta property="og:description" content="Convert Minecraft Java Edition sky textures into Bedrock Edition cubemaps directly in your browser.">
+    <meta property="og:image" content="https://mellow.misumeh.com/Assets/m-preview.png">
+    <meta property="og:url" content="https://mellow.misumeh.com/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mellow | Minecraft Java to Bedrock Sky Converter">
+    <meta name="twitter:description" content="Fast browser-based conversion of Minecraft Java sky textures to Bedrock Edition cubemaps.">
+    <meta name="twitter:image" content="https://mellow.misumeh.com/Assets/m-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Java -> Bedrock Skies</title>
+    <title>Mellow | Minecraft Java to Bedrock Sky Converter</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Mellow",
+        "url": "https://mellow.misumeh.com/",
+        "description": "Convert Minecraft Java Edition sky textures to Bedrock Edition cubemaps in your browser.",
+        "applicationCategory": "Game",
+        "operatingSystem": "Web",
+        "image": "https://mellow.misumeh.com/Assets/m-preview.png",
+        "author": {
+            "@type": "Person",
+            "name": "Misumeh"
+        }
+    }
+    </script>
 </head>
 <body>
-    <main>
-
-        <img src="https://raw.githubusercontent.com/Misumeh/JavaToBedrockSkyConverter/main/Assets/logo.webp" alt="Java To Bedrock Sky Converter logo">
-
-     <div class="error">
-          <i class="fas fa-exclamation-triangle"></i> THIS DOES NOT CONVERT *ANYTHING* BESIDES THE SKY    <i class="fas fa-exclamation-triangle"></i>
-     </div>
-     <div class="input-container-container">
-        <div class="input-container">
-            <div class="file_input tri">
-                <label for="file" class="btn">
-                    <i class="fas fa-cloud-upload-alt"></i> Upload Zip
-                </label>
-                <input type="file" id="file" accept=".zip">
-            </div>
-
-            <div class="tri">
-                <div class="note-box" id="note-box">
-                    <label for="skyname"><i class="fas fa-exclamation-triangle"></i>Skybox Original File Name <b>(INCLUDE.PNG)</b></label>
+    <div class="page-shell">
+        <header class="hero">
+            <div class="hero-headline">
+                <img src="Assets/m-logo.png" alt="Mellow logo" class="brand-logo">
+                <div class="hero-text">
+                    <p class="eyebrow">Minecraft skybox converter</p>
+                    <h1>Java to Bedrock Sky Converter</h1>
                 </div>
-                <input type="text" class="textin" value="starfield.png" id="skyname">
             </div>
-            <div class="tri">
-                <button class="btn" onclick="convert()">
-                    <i class="fas fa-file-export"></i> Convert
-                </button>
+            <p class="hero-copy">Convert Java Edition sky textures into Bedrock Edition cubemaps directly in the browser, no server upload required.</p>
+            <div class="hero-features">
+                <div class="feature-card">Fast, browser-based conversion</div>
+                <div class="feature-card">Supports PNG and common Minecraft sky files</div>
+                <div class="feature-card">Automatic sky file detection from ZIPs</div>
             </div>
-        </div>
-     </div>
-    </main>
+        </header>
+
+        <main>
+            <section class="alert-banner" role="status">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>This tool converts only sky textures from Java resource packs.</span>
+                <i class="fas fa-exclamation-triangle"></i>
+            </section>
+
+            <section class="upload-section">
+                <div class="upload-card" id="upload-card">
+                    <div class="upload-top">
+                        <label for="file" class="upload-button btn icon-btn">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Select ZIP</span>
+                        </label>
+                        <input type="file" id="file" accept=".zip" aria-label="Upload Java resource pack ZIP">
+                        <span class="file-label" id="file-label">No file selected</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sky-presets">Skybox file</label>
+                        <select id="sky-presets" class="textin" aria-label="Skybox preset selector">
+                            <option value="" disabled selected>Upload a ZIP to detect sky files</option>
+                            <option value="custom">Custom filename</option>
+                        </select>
+                        <p class="hint">Detected sky files from the uploaded ZIP will appear here.</p>
+                    </div>
+
+                    <div class="form-group custom-group hidden" id="custom-group">
+                        <label for="skyname">Custom filename</label>
+                        <input type="text" class="textin" id="skyname" value="starfield.png" placeholder="example: starfield.png">
+                    </div>
+
+                    <div class="preview-panel hidden" id="preview-panel">
+                        <p class="preview-label">Sky preview</p>
+                        <img id="preview-image" alt="Sky preview" src="" />
+                    </div>
+
+                    <button class="btn convert-btn" id="convert-button" disabled>
+                        <span class="button-label"><i class="fas fa-file-export"></i> Convert</span>
+                        <span class="button-spinner hidden" aria-hidden="true"></span>
+                    </button>
+
+                    <div class="status-panel" id="status-panel">
+                        <span id="status-text">Ready to convert</span>
+                    </div>
+
+                    <div class="console-panel hidden" id="console-panel">
+                        <div class="console-header">Activity</div>
+                        <div class="console-feed" id="console-feed"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>Developed by Misumeh</p>
+            <a href="https://ko-fi.com/yourlinkhere" class="ko-fi" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-mug-hot"></i> Support on Ko-fi
+            </a>
+        </footer>
+    </div>
+
     <script src="jszip.min.js"></script>
     <script src="script.js"></script>
 </body>

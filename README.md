@@ -1,27 +1,45 @@
-# Minecraft Sky Converter (Java to Bedrock)
+# 🌅 Mellow | Java to Bedrock Sky Converter
 
-web-based tool that converts Java Skies into a format compatible with Minecraft Bedrock Edition. With just a few clicks, you can create a Sky Overlay Resource Pack ready for Minecraft Bedrock Edition.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Features
+**Mellow** is a modern web tool built to convert Java Edition sky textures into Bedrock Edition compatible cubemaps. Fast, secure, and server-free conversion right in your browser.
 
-- **Resource Pack Creation:** Generate a complete resource pack from scratch using the original Java sky file.
-  
-- **Cubemap Transformation:** Rotate, split, and distribute cubemap files to ensure compatibility with Minecraft Bedrock Edition.
+![Hero Preview](Assets/hero-preview.png)
 
-- **Easy Integration:** Obtain a ready-to-import .mcpack file for effortless integration into your Minecraft Bedrock.
+## ✨ Features
+* **Seamless conversion:** Works directly in your browser with no server-side processing.
+* **Modern UI:** Dark mode with orange/gold accents and subtle motion.
+* **Sky presets:** Choose from common sky texture names or enter a custom filename.
+* **Responsive design:** Clean layout for desktop and mobile screens.
+* **Automatic detection:** Scans ZIP files for sky textures in standard paths.
 
-## Credits
+## 🚀 Usage
+1. Visit [mellow.misumeh.com](https://mellow.misumeh.com).
+2. Upload a Java Edition `.zip` resource pack.
+3. Select the skybox filename from the dropdown or choose **Custom**.
+4. Click **Convert** and download the generated `.mcpack`.
 
-- **XCRunnerS (Main Script Coding):** All credits to XCRunnerS for the core functionality and coding of the main script. His dedication and expertise have made this project possible.
+![Upload and Convert Preview](Assets/upload-preview.png)
 
-- **Misumeh (Styles, and website):** Ngl, i feel that i should work more lmao
+## 🛠 Setup (For Developers)
+To run locally:
+1. Clone the repo: `git clone https://github.com/yourusername/mellow.git`
+2. Open `index.html` in your browser (no build required).
 
-We welcome contributions to make Minecraft Sky Converter even better. Feel free to raise issues or suggest improvements on our [GitHub repository](https://github.com/Misumeh/JavaToBedrockSkyConverter).
+## 🤝 Community & Support
+- Join our Discord for discussions and support: [https://discord.gg/mjYWM4JbVn](https://discord.gg/mjYWM4JbVn)
+- Report issues or suggest features on [GitHub Issues](https://github.com/yourusername/mellow/issues).
 
-## License
+If you want to support the project, consider donating via Ko-fi:  
+[Support me on Ko-fi](https://ko-fi.com/misumeh)
 
-This project is licensed under the [MIT License](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt).
+## 🛠 Built By
+Developed by **Misumeh**.
 
----
+## ⚖️ License
+This project is released under the MIT License. Feel free to fork and improve.
 
-**Disclaimer:** This project is not affiliated with or endorsed by Mojang or Microsoft. Minecraft is a trademark of Mojang Synergies AB.
+## 📋 Roadmap
+- Batch conversion for multiple sky files
+- Support for additional texture formats
+- Improved error handling and validation
