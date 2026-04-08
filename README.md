@@ -4,7 +4,7 @@
 
 **Mellow** is a modern web tool built to convert Java Edition sky textures into Bedrock Edition compatible cubemaps. Fast, secure, and server-free conversion right in your browser.
 
-![Hero Preview](Assets/m-preview.png)
+![Hero Preview](Assets/m-favicon.png)
 
 ## ✨ Features
 * **Seamless conversion:** Works directly in your browser with no server-side processing.
@@ -18,8 +18,6 @@
 2. Upload a Java Edition `.zip` resource pack.
 3. Select the skybox filename from the dropdown or choose **Custom**.
 4. Click **Convert** and download the generated `.mcpack`.
-
-![Upload and Convert Preview](Assets/m-logo.png)
 
 ## 🛠 Setup (For Developers)
 To run locally:
